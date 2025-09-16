@@ -80,3 +80,18 @@ Replication é quando dados são copiados de um nó para outro, o ponto é permi
 Snapshots são o backup em si, uma cópia de todos os dados em dado período de tempo. Serve para recuperar dados em graves crises, mas isso faz o sistema ficar off-line.
 
 Então replication e snapshots atuam em ambientes distintos, Replication quer manter o acesso à informação mesmo com alguns percaussos, o Snapshot quer recuperar a informação completa em graves crises de perca de informação.
+
+## Criação de novos nós em ambiente de desenvolvimento
+
+Um nó não é nada além de uma instância do Elasticsearch, então se você quiser mais nós, vai precisar extrair o arquivo mestre do elasticsearch novamente e renomear
+
+## Classes que um nó pode ter
+
+Como uma instância do elasticsearch, um nó pode ser muitas coisas, em especial:
+
+* Master: cria e deleta índices 
+* Machine Learning: pode aprender e aplicar algoritmos de machine learning
+* Ingestion: pode usar a pipeline de ingestão da informação, adicionando documentos.
+* Voting-Only: muito raro de usar, só serve para votar em um novo nó master 
+* Data: serve para guardar informação
+* Coordination: coordena a distribuição de queries e a agregação do resultado de pesquisa
