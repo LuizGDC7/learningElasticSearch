@@ -95,3 +95,11 @@ Como uma instância do elasticsearch, um nó pode ser muitas coisas, em especial
 * Voting-Only: muito raro de usar, só serve para votar em um novo nó master 
 * Data: serve para guardar informação
 * Coordination: coordena a distribuição de queries e a agregação do resultado de pesquisa
+
+## Escrita e leitura
+
+O elasticsearch lê usando os shards e fazendo uma conta como a seguinte:
+
+shard_correto = hash(documento) % qtd_shards, por isso a quantidade de shards por índice é fixa.
+
+Algo parecido acontece para escrita
